@@ -1,0 +1,120 @@
+// Mobile mixin
+@mixin mobile($type) {
+	@if $type== 'sm' {
+		@media (min-width: 768px) {
+			@content;
+		}
+	} @else if $type== 'md' {
+		@media (min-width: 820px) {
+			@content;
+		}
+	} @else if $type== 'lg' {
+		@media (min-width: 992px) {
+			@content;
+		}
+	} @else if $type== 'xl' {
+		@media (min-width: 1250px) {
+			@content;
+		}
+	} @else if $type== 'full' {
+		@media (min-width: 1650px) {
+			@content;
+		}
+	}
+}
+
+@mixin transition {
+	-webkit-transition: all 0.4s ease 0.1s;
+	-moz-transition: all 0.4s ease 0.1s;
+	-o-transition: all 0.4s ease 0.1s;
+	transition: all 0.4s ease 0.1s;
+}
+
+@mixin clearfix {
+	&:before {
+		clear: both;
+	}
+
+	&:before,
+	&:after {
+		content: ' ';
+		visibility: hidden;
+		display: block;
+		height: 0;
+		clear: both;
+	}
+}
+
+@mixin top-50 {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin left-50 {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+@mixin top-left-50 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+@mixin radius50 {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+@mixin radius15 {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+@mixin radius5 {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+@mixin radius10 {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+@mixin radius($size) {
+	-webkit-border-radius: $size;
+	-moz-border-radius: $size;
+	border-radius: $size;
+	-ms-border-radius: $size;
+	-o-border-radius: $size;
+}
+
+@mixin res-padding($top, $right, $bottom, $left) {
+	padding: calc(#{$top} / 2) calc(#{$right} / 2) calc(#{$bottom} / 2) calc(#{$left} / 2);
+	@media (min-width: 1180px) {
+		padding: $top $right $bottom $left;
+	}
+}
+@mixin res-gap($top) {
+	gap: calc(#{$top} / 2);
+	@media (min-width: 1180px) {
+		gap: $top;
+	}
+}
